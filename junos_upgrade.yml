@@ -1,4 +1,5 @@
 ---
+# Make sure galaxy module Juniper.junos is installed for this to work
 - name: Install Junos OS
   hosts: dc1
   roles:
@@ -7,10 +8,10 @@
   gather_facts: no
   vars:
     wait_time: 3600
-    pkg_dir: /var/tmp/junos-install
-    OS_version: 14.1R1.10
-    OS_package: jinstall-14.1R1.10-domestic-signed.tgz
-    log_dir: /var/log/ansible
+    pkg_dir: /var/tmp/junos-install # Can be a variable for better portability
+    OS_version: 14.1R1.10 # Can be a variable for better portability
+    OS_package: jinstall-14.1R1.10-domestic-signed.tgz # Can be a variable for better portability
+    log_dir: /var/log/ansible # Can be a variable for better portability
 
   tasks:
     - name: Checking NETCONF connectivity
